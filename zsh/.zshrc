@@ -5,8 +5,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${USER}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${USER}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -118,7 +118,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -126,36 +125,35 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-case "$TERM" in
-xterm-color | *-256color) color_prompt=yes ;;
-esac
+# case "$TERM" in
+# xterm-color | *-256color) color_prompt=yes ;;
+# esac
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/qssg/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/qssg/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/qssg/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/qssg/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/user/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/user/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
-# alias command
-alias cp='/usr/local/bin/advcp -g'
-alias mv='/usr/local/bin/advmv -g'
-alias evim='vim -y -c "inoremap <c-q> <c-o>:wq<cr>"'
-alias ipython='python3 -m IPython'
+##### alias command
+# alias cp='/usr/local/bin/advcp -g'
+# alias mv='/usr/local/bin/advmv -g'
+# alias evim='vim -y -c "inoremap <c-q> <c-o>:wq<cr>"'
+# alias ipython='python3 -m IPython'
 
+# export PATH=/opt/riscv/bin:$PATH
 
-export PATH=/opt/riscv/bin:$PATH
-export PATH="$HOME/neovim/bin:$PATH"
-
-# NVM_DIR
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+##### neovim
+# export PATH="$HOME/neovim/bin:$PATH"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
