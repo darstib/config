@@ -45,6 +45,14 @@
   local green='#2DD18B'
   local cyan='#9AEDFE'
   local white='#F1F1F0'
+  local orange='#C76B4A'
+
+function prompt_distro() {
+  local distro_name=$(grep -oP '(?<=^NAME=).+' /etc/os-release | tr -d '"')
+#   local distro_id=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
+#   p10k segment -f 208 -i '🐧' -t "${distro_name:-$distro_id}"
+  p10k segment -f 208 -i '🐧' -t "${distro_name}"
+}
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -59,9 +67,10 @@
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-    context                   # user@host
+    context                 # user@host
+    os_icon                 # OS icon
     dir                       # current directory
-    dir_writable
+    dir_writable            # current directory writable indicator
     background_jobs           # presence of background jobs
     vim_shell                 # vim shell indicator (:sh)
     toolbox                   # toolbox name (https://github.com/containers/toolbox)
@@ -113,6 +122,8 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
+  # Orange OS ICON
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$orange
   # Blue current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
 
