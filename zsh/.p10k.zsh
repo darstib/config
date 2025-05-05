@@ -47,13 +47,6 @@
   local white='#F1F1F0'
   local orange='#C76B4A'
 
-function prompt_distro() {
-  local distro_name=$(grep -oP '(?<=^NAME=).+' /etc/os-release | tr -d '"')
-#   local distro_id=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
-#   p10k segment -f 208 -i '🐧' -t "${distro_name:-$distro_id}"
-  p10k segment -f 208 -i '🐧' -t "${distro_name}"
-}
-
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
