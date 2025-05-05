@@ -129,31 +129,10 @@ HISTFILESIZE=2000
 # xterm-color | *-256color) color_prompt=yes ;;
 # esac
 
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/user/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/user/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-
 ##### alias command
-# alias cp='/usr/local/bin/advcp -g'
+# alias cp='/usr/local/bin/advcp -g' # https://github.com/jarun/advcpmv
 # alias mv='/usr/local/bin/advmv -g'
 # alias evim='vim -y -c "inoremap <c-q> <c-o>:wq<cr>"'
 # alias ipython='python3 -m IPython'
 
 # export PATH=/opt/riscv/bin:$PATH
-
-##### neovim
-# export PATH="$HOME/neovim/bin:$PATH"
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
