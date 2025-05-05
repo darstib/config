@@ -1,6 +1,7 @@
 -- Note: The order matters: require("mason") -> require("mason-lspconfig") -> require("lspconfig")
 
 require("mason").setup({
+    automatic_installation = true,
 	ui = {
 		icons = {
 			package_installed = "✓",
@@ -12,7 +13,7 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed.
-	ensure_installed = { "pylsp", "lua_ls", "bashls", "harper_ls" },
+	ensure_installed = { "pylsp", "lua_ls", "bashls", "rust_analyzer", "clangd"},
 })
 
 -- Set different settings for different languages' LSP.
@@ -79,9 +80,9 @@ lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.gopls.setup({
-	on_attach = on_attach,
-})
+-- lspconfig.gopls.setup({
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,
@@ -114,17 +115,13 @@ lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.clangd.setup({
-	on_attach = on_attach,
-})
+-- lspconfig.ocamllsp.setup({
+-- 	on_attach = on_attach,
+-- })
 
-lspconfig.ocamllsp.setup({
-	on_attach = on_attach,
-})
-
-lspconfig.ruby_lsp.setup({
-	on_attach = on_attach,
-})
+-- lspconfig.ruby_lsp.setup({
+-- 	on_attach = on_attach,
+-- })
 
 -- Case 1. For CMake Users
 --     $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
@@ -137,6 +134,6 @@ lspconfig.clangd.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.hls.setup({
-	on_attach = on_attach,
-})
+-- lspconfig.hls.setup({
+-- 	on_attach = on_attach,
+-- })
